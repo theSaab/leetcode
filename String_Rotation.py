@@ -24,7 +24,7 @@ def isSubstring(original, rotated):
     else:
         print(True)
         
-isSubstring('waterbottle', 'terbottlewa')
+isSubstring('saba', 'basa')
     
     
     
