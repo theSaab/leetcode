@@ -4,23 +4,13 @@ import time
 x = time.time()
 print(x)
 
-matrix = [[1, 0, 1],
-          [4, 0, 6],
+matrix = [[4, 0, 6],
           [7, 1, 9],
-          [0, 3, 1],
-          [0, 3, 1],
-          [0, 3, 1],
-          [0, 3, 1],
-          [0, 3, 1]]
+          [5, 5, 0]]
 
-ret_matrix = [[1, 0, 1],
-              [4, 0, 6],
+ret_matrix = [[4, 0, 6],
               [7, 1, 9],
-              [0, 3, 1],
-              [0, 3, 1],
-              [0, 3, 1],
-              [0, 3, 1],
-              [0, 3, 1]]
+              [5, 5, 0]]
 
 zero_in = 0
 out_count = 0
@@ -43,4 +33,5 @@ for row in matrix:
         ret_matrix[out_count] = blank()
     out_count += 1
 
-print(time.time() - x)
+for element in ret_matrix:
+    print(element)
