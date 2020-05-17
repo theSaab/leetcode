@@ -1,14 +1,5 @@
 
 
-graph = {
-    1: [2, 3, None],
-    2: [4, None],
-    3: [None],
-    4: [5, 6, None],
-    5: [6, None],
-    6: [None]
-}
-
 
 class LinkedLists:
     def __init__(self, nodes=None):
