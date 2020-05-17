@@ -1,6 +1,6 @@
 
 # this program removes the duplicates of a linked list
-# not sure how to keep the same lsit though
+# not sure how to keep the same list though
 
 from collections import deque
 
@@ -16,3 +16,4 @@ for element in list:
 
 print(list)
 print(blank)
+
