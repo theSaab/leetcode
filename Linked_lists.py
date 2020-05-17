@@ -67,7 +67,22 @@ class LinkedLists:
 
         raise Exception("Node with data '%s' not found" % target_node_data)
 
+    def remove_node(self, target_node_data):
+        if not self.head:
+            raise Exception("List is empty")
 
+        if self.head.data == target_node_data:
+            self.head = self.head.next
+            return
+
+        previous_node = self.head
+        for node in self:
+            if node.data == target_node_data:
+                previous_node.next = node.next
+                return
+            previous_node = node
+
+        raise Exception("Node with data '%s' not found" % target_node_data)
 
 class Node:
     def __init__(self, data):
@@ -92,6 +107,8 @@ Llist.add_last(Node('hello'))
 
 Llist.add_after('abas', Node('mandems'))
 Llist.add_before('bruh', Node('pullers'))
+Llist.remove_node('bruh')
+
 
 for node in Llist:
     print(node.data)
