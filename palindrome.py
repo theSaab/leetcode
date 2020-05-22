@@ -2,13 +2,6 @@
 
 from collections import deque
 
-
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-
 class LinkedLists:
     def __init__(self, nodes=None):
         self.head = None
@@ -25,26 +18,36 @@ class LinkedLists:
             yield node
             node = node.next
 
+    def add_first(self, node):
+        node.next = self.head
+        self.head = node
 
     def palindrome(self):
+        list = deque(self)
+        blank = deque()
+        for node in list:
+            blank.add_first(node)
         
-        first_letter = self.head
-        last_letter = self.head
-
-        if self.head is not None:
-            while last_letter is not None:
-                last_letter = last_letter.next
-        
-
-        if first_letter == last_letter:
+        if blank == self:
             print('here')
-        else:
-            print('Not palindrome')
+        print(blank)
+        print(list)  
+ 
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
 
+Llist = LinkedLists()
+
+first_node = Node('1')
+Llist.head = first_node
+Llist.head.next = Node('2')
+Llist.head.next.next = Node('3')
+Llist.head.next.next.next = Node('2')
+Llist.head.next.next.next.next = Node('1')
 
 
-
-Llist.remove_node(3)
-
-print(Llist)
+Llist.palindrome()
