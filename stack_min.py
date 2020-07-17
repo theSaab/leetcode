@@ -2,7 +2,30 @@
 
 from collections import deque
 
-piece = deque([781, 2, 4, 5, 1, 4, 6, 56, 3, 16])
+#
+
+piece = [ 781, 2, 4, 5, 1, 4, 6, 56, 3, 16]
+min_stack = []
+
+def push(number):
+    stack.append(number)
+
+    if min_stack[-1] > number:
+        min_stack.append(number)
+
+def pop():
+
+    if min_stack[-1] == stack[-1]:
+        min_stack.pop()
+        stack.pop()
+    
+    else:
+        stack.pop()
+
+def min_pop():
+    min_stack.pop()
+
+
 
 
 def min(stack):
