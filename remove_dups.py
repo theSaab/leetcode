@@ -4,7 +4,7 @@
 
 from collections import deque
 
-list = deque('abfcdeefghilmnl')
+list = deque('aaaabfcdeefghilmnl')
 blank = deque('')
 
 for element in list:
