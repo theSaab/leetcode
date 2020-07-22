@@ -27,3 +27,5 @@ def stock(prices):
     else:
         print(profit)
 stock(price)
+
+
