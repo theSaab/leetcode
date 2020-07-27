@@ -1,7 +1,6 @@
 
 
-string = 'abcabcabcabacbabccsdawrt'
-arr = []
+string = 'dvdf'
 
 
 def long_sub(word):
@@ -11,8 +10,11 @@ def long_sub(word):
         if char not in stri:
             stri += char
         else:
+            print(arr)
             arr.append(stri)
             stri = ''
+            stri += char
+            print(arr)
     else:
         arr.append(stri)
         length = 0

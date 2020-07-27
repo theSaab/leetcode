@@ -6,8 +6,8 @@ k = 3
 def rotate(list, degree):
 
     for i in range(degree):
-        list.insert(0, list[-1])
-        list.pop()
+        list.insert(0, list.pop())
+        
     print(list)
 
 rotate(nums, k)

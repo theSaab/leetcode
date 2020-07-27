@@ -5,30 +5,42 @@ Given n non-negative integers a1, a2, ..., an , where each represents a point at
 Note: You may not slant the container and n is at least 2.
 '''
 
-level = [8,6,2,5,4,8,3,7]
-
+level = [1,8,6,2,5,4,8,3,7]
 
 def water(levels):
 
     count = 0
     volume = 0
+    taller_point = levels[0]
+    shorter_point = 0
+    for element in levels[1:]:
+        space = 1
 
-    for element in levels:
-        space = 0
-        left_point = element
-        for element in levels[count + 1:]:
-            space += 1
-            if element > left_point:
-                base = left_point
-            else:
-                base = element 
-            if (base * space) > volume:
-                volume = base * space
-            else: 
-                continue 
+        if element > taller_point:
+            shorter_point = taller_point
+            taller_point = element
+            if space * shorter_point > volume:
+                
+            space = 1
         else:
-            count += 1
-    else:
-        print(volume)
+            space += 1
+        if space *   
+
+
+    #     left_point = element
+    #     for element in levels[count + 1:]:
+    #         space += 1
+    #         if element > left_point:
+    #             base = left_point
+    #         else:
+    #             base = element 
+    #         if (base * space) > volume:
+    #             volume = base * space
+    #         else: 
+    #             continue 
+    #     else:
+    #         count += 1
+    # else:
+    #     print(volume)
 
 water(level)

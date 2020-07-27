@@ -25,7 +25,7 @@ def majority(input):
                 max = arr[element]
                 key = element
         else:
-            print(key)
+            return(key)
 
 
 majority(list)
