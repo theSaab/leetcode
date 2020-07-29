@@ -19,7 +19,7 @@ def happy(number):
             number = str(new_num)
             new_num = 0
         
-        if count == 10000000:
+        if count == 10:
             return False
         
 
