@@ -96,32 +96,40 @@ class LinkedList:
         raise Exception("Node with data '%s' not found" % target_node)
     
     def is_palindrome(self):
-        
+        if not self.head:
+            return True
+        if not self.head.next:
+            return True
         stack = []
         left = self.head
         right = self.head.next
-
+        stack.append(left)
+        
         while right.next != None:
-
             print('gseg')
             print(left)
             print(right)
-            stack.append(left.data)
+            # stack.append(left.data)
             left = left.next
             stack.append(left.data)
             right = right.next
             right = right.next
             
-        if (len(stack)*2) % 2 != 0:
-            left = left.next
+        if (len(stack)) % 2 == 0:
+            print(stack)
+
+        print(str(stack))
 
         while len(stack) != 0:
             left = left.next
-            if left.data != stack.pop():
+            # print(left)
+            # print(stack[-1])
+            if left != stack.pop():
                 return False
+                
         return True
 
-llist = LinkedList(["a", "b", "b", "a"])
+llist = LinkedList([0, 0])
 print(llist.is_palindrome())
 
 
