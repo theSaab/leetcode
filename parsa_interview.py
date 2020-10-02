@@ -260,39 +260,91 @@ arr = []
 12. return True
 '''
 
-# Definition of LL
-class LinkedList:
-    def __init__(self, data = 0, next = None):
-        self.data = data
-        self.next = next
+# # Definition of LL
+# class LinkedList:
+#     def __init__(self, data = 0, next = None):
+#         self.data = data
+#         self.next = next
 
-class Solution:
-    def isPalindrome(self, head):
+# class Solution:
+#     def isPalindrome(self, head):
         
-        if not self.head:
-            return False
-        if self.head.next == None:
-            return True
+#         if not self.head:
+#             return False
+#         if self.head.next == None:
+#             return True
         
-        arr = []
+#         arr = []
 
-        pointer1 = self.head
-        pointer2 = self.head.next
+#         pointer1 = self.head
+#         pointer2 = self.head.next
 
-        while pointer2.next != None:
-            arr.append(pointer1.data)
+#         while pointer2.next != None:
+#             arr.append(pointer1.data)
 
-            pointer1 = pointer1.next
-            arr.append(pointer1.data)
+#             pointer1 = pointer1.next
+#             arr.append(pointer1.data)
 
-            pointer2 = pointer2.next
-            pointer2 = pointer2.next
+#             pointer2 = pointer2.next
+#             pointer2 = pointer2.next
 
-        if len(arr) * 2) != 0:
-            arr.pop()
+#         if len(arr) * 2) != 0:
+#             arr.pop()
 
-        while len(arr) > 0:
-            if arr.pop() != pointer1.data:
-                return False
-        else:
-            return True
+#         while len(arr) > 0:
+#             if arr.pop() != pointer1.data:
+#                 return False
+#         else:
+#             return True
+
+
+
+'''
+input: int hours, minutes
+return smaller angle between hands
+return int 
+hours => [0, 12[
+minutes => [0, 60[
+ex: 2, 19
+
+hours: 1 hour = 30 degrees
+minutes: 1 minute = 6 degrees
+
+1. Translate both inputs to degrees
+1.5 transform hours to double, add minutes/60
+2. take abs(difference between both)
+3. return smallest int 
+
+[3.25, 15]
+
+97.5
+90
+
+'''
+
+
+def angleBetweenHands( hour, minute):
+
+    angleMinutes = minute%60 * 6
+    angleHour = (hour + minute%60/60) * 30
+
+    angle = abs(angleHour%12 - angleMinutes)
+    if (360 - angle < angle):
+        return (360-angle)
+    return angle
+
+
+print(angleBetweenHands( 12, 30))
+
+
+
+
+
+
+
+
+
+
+
+
+
