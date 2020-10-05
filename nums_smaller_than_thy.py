@@ -5,7 +5,7 @@ def counter( nums ):
     
     arr = []
     for i,num in enumerate(nums):
-        count = 0
+        count = 0 
         for j,elem in enumerate(nums):
             if j != i:
                 if elem < num:

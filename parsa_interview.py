@@ -323,28 +323,87 @@ minutes: 1 minute = 6 degrees
 '''
 
 
-def angleBetweenHands( hour, minute):
+# def angleBetweenHands( hour, minute):
 
-    angleMinutes = minute%60 * 6
-    angleHour = (hour + minute%60/60) * 30
+#     angleMinutes = minute%60 * 6
+#     angleHour = (hour + minute%60/60) * 30
 
-    angle = abs(angleHour%12 - angleMinutes)
-    if (360 - angle < angle):
-        return (360-angle)
-    return angle
-
-
-print(angleBetweenHands( 12, 30))
+#     angle = abs(angleHour%12 - angleMinutes)
+#     if (360 - angle < angle):
+#         return (360-angle)
+#     return angle
 
 
+# print(angleBetweenHands( 12, 30))
 
 
+'''
 
+given a paragraph and list of banned words
+return most frequent not banned word
+para can be empty
+banned can be empty
+no nums 
+input: para(str), banned(list(str))
+return word(str)
+answer is unique
+space is seperation
 
+'''
 
+# 1. dik = {}
+# 1.5 word = ''
+# 2. for char in para:
+# 3.      if char != ' ':
+# 4.           word = word + char
+#         else:
+#             if word not in dik and word not in banned:
+#                 dik{word} = 1
+#                 word = ''
+#             elif word not in banned :
+#                 dik{word} += 1
+#                 word = ''
+# 5. max = 0
+# 5.5 word =''
+# 6. for node in dik:
+# 7. if dik{node} > max :
+#     max = dik{node}
+#     word = node
+# 8. return word
 
+                
+def mostCommon(paragraph, banned):
+    dik = {}
+    word = ''
+    alpha = 'abcdefghijklmnopqrstuvwxyz'
 
+    for char in paragraph:
+        print(word)
+        if char.lower() in alpha:
+            word = word + char
+        elif word != '':
+            word = word.lower()
+            if word not in dik and word not in banned:
+                dik[word] = 1
+                word = ''
+            elif word in dik:
+                print('faefawfaw')
+                dik[word] += 1
+                word = ''
+            else:
+                word = ''
+    else:
+        if word != '':
+            dik[word.lower()] = 1
+            
+    max = 0
+    word = ''
+    for node in dik:
+        if dik[node] > max :
+            max = dik[node]
+            word = node
+    print(dik)
+    return word
 
-
-
+print(mostCommon("Bob. hIt, baLl", ["bob", "hit"]))
 
