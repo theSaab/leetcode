@@ -372,38 +372,70 @@ space is seperation
 # 8. return word
 
                 
-def mostCommon(paragraph, banned):
-    dik = {}
-    word = ''
-    alpha = 'abcdefghijklmnopqrstuvwxyz'
+# def mostCommon(paragraph, banned):
+#     dik = {}
+#     word = ''
+#     alpha = 'abcdefghijklmnopqrstuvwxyz'
 
-    for char in paragraph:
-        print(word)
-        if char.lower() in alpha:
-            word = word + char
-        elif word != '':
-            word = word.lower()
-            if word not in dik and word not in banned:
-                dik[word] = 1
-                word = ''
-            elif word in dik:
-                print('faefawfaw')
-                dik[word] += 1
-                word = ''
-            else:
-                word = ''
-    else:
-        if word != '':
-            dik[word.lower()] = 1
+#     for char in paragraph:
+#         print(word)
+#         if char.lower() in alpha:
+#             word = word + char
+#         elif word != '':
+#             word = word.lower()
+#             if word not in dik and word not in banned:
+#                 dik[word] = 1
+#                 word = ''
+#             elif word in dik:
+#                 print('faefawfaw')
+#                 dik[word] += 1
+#                 word = ''
+#             else:
+#                 word = ''
+#     else:
+#         if word != '':
+#             dik[word.lower()] = 1
             
-    max = 0
-    word = ''
-    for node in dik:
-        if dik[node] > max :
-            max = dik[node]
-            word = node
-    print(dik)
-    return word
+#     max = 0
+#     word = ''
+#     for node in dik:
+#         if dik[node] > max :
+#             max = dik[node]
+#             word = node
+#     print(dik)
+#     return word
 
-print(mostCommon("Bob. hIt, baLl", ["bob", "hit"]))
+# print(mostCommon("Bob. hIt, baLl", ["bob", "hit"]))
+
+
+def somme( num ):
+
+    if num == 0:
+        return None
+
+    else:
+
+        i = 1
+        somme = 0 
+        while i <= abs(num):
+
+            if abs(num) % i == 0 and i % 2 != 0:
+                somme += i
+            
+            i += 1
+    
+    return somme
+
+print(somme(-2001))
+
+
+
+
+
+
+
+
+
+
+
 
